@@ -1,0 +1,14 @@
+#div_first {
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    text-align: center;
+    line-height: 200px;
+}
+#div_second {
+    width: 200px;
+    height: 200px;
+    background-color: cadetblue;
+    text-align: center;
+    line-height: 200px;
+}
