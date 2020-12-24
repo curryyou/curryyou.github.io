@@ -1,4 +1,16 @@
+body {
+    width: 800px;
+    margin: 0 auto;
+}
+#div_wrap {
+    overflow: hidden;
+}
+img {
+    width: 200px;
+    float: left;
+}
 #div_first {
+    float: left;
     width: 200px;
     height: 200px;
     background-color: aquamarine;
@@ -6,6 +18,7 @@
     line-height: 200px;
 }
 #div_second {
+    float: left;
     width: 200px;
     height: 200px;
     background-color: cadetblue;
