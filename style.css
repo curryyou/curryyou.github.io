@@ -1,39 +1,84 @@
+/* 공통 적용 사항 초기화 */
 * {
     font-family: 'Noto Serif KR', serif;
     margin: 0;
-    border-style: 0;
+    border: 0;
     outline: 0;
 }
 
-body {
-    width: 600px;
-    margin: 0 auto;
+/* 반응형 웹(PC): 600픽셀 이상 */
+@media screen and (min-width: 600px){
+
+    body {
+        width: 600px;
+        margin: 0 auto;
+    }
+    h1 {
+        text-align: center;
+        margin: 10px;
+    }
+    #div_wrap {
+        overflow: hidden;
+    }
+    img {
+        width: 200px;
+        float: left;
+    }
+    #div_first {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        text-align: center;
+        line-height: 200px;
+    }
+    #div_second {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: cadetblue;
+        color: white;
+        text-align: center;
+        line-height: 200px;
+    }
 }
-h1 {
-    text-align: center;
-    margin: 10px;
+
+/* 반응형 웹(Mobile): 599픽셀 이하 */
+@media screen and (max-width: 599px){
+    
+    html, body {
+        width: 100%;
+        margin: 0 auto;
+    }
+    h1 {
+        text-align: center;
+        margin: 10px;
+    }
+
+    #div_wrap {
+        overflow: hidden;
+    }
+    img {
+        width: 33%;
+        float: left;
+    }
+    #div_first {
+        float: left;
+        width: 33%;
+        height: 150px;
+        background-color: aquamarine;
+        text-align: center;
+        line-height: 150px;
+    }
+    #div_second {
+        float: left;
+        width: 33%;
+        height: 150px;
+        background-color: cadetblue;
+        color: white;
+        text-align: center;
+        line-height: 150px;
+    }
 }
-#div_wrap {
-    overflow: hidden;
-}
-img {
-    width: 200px;
-    float: left;
-}
-#div_first {
-    float: left;
-    width: 200px;
-    height: 200px;
-    background-color: aquamarine;
-    text-align: center;
-    line-height: 200px;
-}
-#div_second {
-    float: left;
-    width: 200px;
-    height: 200px;
-    background-color: cadetblue;
-    color: white;
-    text-align: center;
-    line-height: 200px;
-}
+
+
