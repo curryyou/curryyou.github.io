@@ -224,6 +224,14 @@ footer {
     header > input:checked ~ label>i {
         color: var(--white-light);
     }
+
+    /* 푸터 */
+    footer h4{
+        font-size: 0.7em;
+    }
+    footer p {
+        font-size: 0.5em;
+    }
 }
 
 /* 메인 */
