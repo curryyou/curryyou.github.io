@@ -209,6 +209,7 @@ footer {
         padding: 0px 12px
     }
     header > label > i.material-icons {
+        color: var(--gray-primary);
         font-size: 36px;
         line-height: 55px;
     }
@@ -220,7 +221,7 @@ footer {
     header > input:checked ~ nav, header > input:checked ~ aside{
         display: block;
     }
-    header > input:checked ~ label {
+    header > input:checked ~ label>i {
         color: var(--white-light);
     }
 }
