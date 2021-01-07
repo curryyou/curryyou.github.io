@@ -328,13 +328,13 @@ footer {
         
     }
 
-    #section_input > #input_aside > a {
-        display: block;
-        color: var(--black-light);
-        font-size: 0.9em;
-        font-weight: bold;
-        text-align: center;
-        line-height: 165px;
+    #section_input > #input_aside > a > img {
+        width: 220px;
+    }
+
+    #section_input > #input_aside > a > img:hover {
+        border: 2px solid var(--blue-button);
+        border-radius: 5px;
     }
 
     #section_input > #input_aside > a:hover{
@@ -436,6 +436,7 @@ footer {
         width: 100%;
         display: flex;
         justify-content: space-around;
+        align-items: center;
         margin: 4px;
     }
 
@@ -483,24 +484,21 @@ footer {
 
     #section_input > #input_aside {
         width: 38%;
-        height: 150px;
         border: 1px solid var(--gray-light);
         border-radius: 5px;
         margin: 4px 4px 4px 0px;
+        text-align: center;
         
     }
 
-    #section_input > #input_aside > a {
-        display: block;
-        color: var(--black-light);
-        font-size: 0.9em;
-        font-weight: bold;
-        text-align: center;
-        line-height: 150px;
+    #section_input > #input_aside > a > img {
+        display: inline-block;
+        width: 98%;
     }
 
-    #section_input > #input_aside > a:hover{
-        color: var(--blue-button-hover);
+    #section_input > #input_aside > a > img:hover {
+        border: 2px solid var(--blue-button);
+        border-radius: 5px;
     }
 
     /*--------- section #3 : 결과 테이블 ---------*/
