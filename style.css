@@ -1,84 +1,397 @@
-/* 공통 적용 사항 초기화 */
+/****************** CSS 변수 ******************/
+:root {
+    --black-dark: #102027;
+    --black-primary: #37474f;
+    --black-light: #62727b;
+    --gray-dark: #8d8d8d;
+    --gray-primary: #bdbdbd;
+    --gray-light: #efefef;
+    --white-light: #fafafa;
+    --white-primary: #f5f5f5;
+    --white-dark: #eeeeee;
+}
+
+/****************** CSS 초기화 ******************/
 * {
+    margin:0px; padding:0px; border:none; outline: none; box-sizing: border-box;
     font-family: 'Noto Serif KR', serif;
-    margin: 0;
-    border: 0;
-    outline: 0;
+    color: var(--black-primary);
+}
+a {text-decoration: none;}
+li {list-style: none;}
+
+
+
+/****************** PC 버전 ******************/
+
+/* 헤더 */
+header {
+    width: 100%;
+    background-color: var(--black-dark);
+    color: var(--gray-primary);
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* 반응형 웹(PC): 600픽셀 이상 */
-@media screen and (min-width: 600px){
-
-    body {
-        width: 600px;
-        margin: 0 auto;
-    }
-    h1 {
-        text-align: center;
-        margin: 10px;
-    }
-    #div_wrap {
-        overflow: hidden;
-    }
-    img {
-        width: 200px;
-        float: left;
-    }
-    #div_first {
-        float: left;
-        width: 200px;
-        height: 200px;
-        background-color: aquamarine;
-        text-align: center;
-        line-height: 200px;
-    }
-    #div_second {
-        float: left;
-        width: 200px;
-        height: 200px;
-        background-color: cadetblue;
-        color: white;
-        text-align: center;
-        line-height: 200px;
-    }
+header a{
+    color: var(--gray-light);
 }
 
-/* 반응형 웹(Mobile): 599픽셀 이하 */
-@media screen and (max-width: 599px){
+/* 헤더 > 로고 */
+header > .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* 모바일에서 아래 nav가 영역 침범하지 않도록 설정 */
+    padding: 6px 12px;
+}
+header > .logo > a{
+    display: block;
+    font-weight: bolder;
+    margin-right: 12px;
+}
+header > .logo > a > img{
+    vertical-align: bottom;
+    width: 54px;
+    border-radius: 50px;
+}
+
+
+/* 네비게이션 */
+header > nav > ul {
+    display: flex;
+    justify-content: space-between;
+}
+header > nav > ul > li {
+    padding: 8px 24px;
+}
+
+/* SNS 링크 */
+header aside > ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 24px;
+}
+header aside li {
+    padding: 8px 12px;
+}
+
+header aside li i.material-icons {
+    font-size:1.7rem;
+    color:var(--gray-light); 
+    vertical-align: -25%;
+}
+
+
+/* 링크 마우스 오버 효과 */
+header a:hover {
+    color: var(--white-primary);
+    font-weight: bolder;
+}
+header a:active {
+    color: var(--white-light);
+    font-weight: bolder;
+}
+
+/* 모바일 전용 메뉴 숨김 처리 */
+header > label, header > input {
+    display: none;
+}
+
+:root {
+    --black-dark: #102027;
+    --black-primary: #37474f;
+    --black-light: #62727b;
+    --gray-dark: #8d8d8d;
+    --gray-primary: #bdbdbd;
+    --gray-light: #efefef;
+    --white-light: #fafafa;
+    --white-primary: #f5f5f5;
+    --white-dark: #eeeeee;
+    --green-button: #2ea44f;
+    --blue-button: #0096FF;
+    --blue-button-hover: #0667d6;
+}
+
+/*--------- 메인 ---------*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*--------- section #1: 제목 부분 ---------*/
+main > #section_title {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    padding: 12px 6px;
+    border-bottom: 2px solid var(--black-primary);
+}
+
+main > #section_title h3 {
+    margin-left: 8px;
+}
+
+main > #section_title a {
+    display: inline-block;
+    padding: 0px 2px;
+    font-size: 0.8em;
+    color: var(--black-primary);
+}
+
+main > #section_title > div:nth-of-type(1) > img {
+    width: 46px;
+    border-radius: 50px;
+    vertical-align: bottom;
+}
+
+/*--------- section #2: 인풋/버튼 부분 ---------*/
+
+#section_input{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+#section_input > #input_first {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--gray-light);
+    border-radius: 5px;
+    width: 270px;
+}
+
+#section_input>#input_first>p {
+    font-size: 0.85em;
+    font-weight: bold;
+    padding: 4px;
+    margin: 8px;
+}
+
+#section_input > #input_first input {
+    background-color: var(--white-primary);
+    border: 1px solid var(--white-dark);
+    border-radius: 20px;
+    width: 250px;
+    height: 32px;
+    margin: 2px 8px;
+    padding-left: 10px;
+}
+
+#section_input > div#input_first button {
+    background-color: var(--blue-button);
+    color: var(--white-primary);
+    border-radius: 20px;
+    width: 250px;
+    height: 32px;
+    margin: 4px 8px;
+}
+
+#section_input > div#input_first button:hover{
+    background-color: var(--blue-button-hover);
+}
+#section_input > div#input_first button:active{
+    color: var(--white-dark);
+}
+
+#section_input > #input_aside {
+    width: 220px;
+    height: 165px;
+    border: 1px solid var(--gray-light);
+    border-radius: 5px;
     
-    html, body {
-        width: 100%;
-        margin: 0 auto;
-    }
-    h1 {
-        text-align: center;
-        margin: 10px;
-    }
-
-    #div_wrap {
-        overflow: hidden;
-    }
-    img {
-        width: 33%;
-        float: left;
-    }
-    #div_first {
-        float: left;
-        width: 33%;
-        height: 150px;
-        background-color: aquamarine;
-        text-align: center;
-        line-height: 150px;
-    }
-    #div_second {
-        float: left;
-        width: 33%;
-        height: 150px;
-        background-color: cadetblue;
-        color: white;
-        text-align: center;
-        line-height: 150px;
-    }
 }
 
+#section_input > #input_aside > a {
+    display: block;
+    color: var(--black-light);
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 165px;
+}
+
+#section_input > #input_aside > a:hover{
+    color: var(--blue-button-hover);
+    font-size: 1.0em;
+}
+
+/*--------- section #3 : 결과 테이블 ---------*/
+#section_result {
+    display: none;
+    margin-top: 16px;
+}
+
+#section_result>div>p{
+    margin: 0px 16px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+#section_result>div>p>span:first-of-type{
+    font-size: 0.9em;
+    font-weight: normal;
+}
+#section_result>div>p>a{
+    vertical-align:middle;
+    
+    color: var(--blue-button);
+}
+
+
+#section_result>div>p>a:hover{
+    color: var(--blue-button-hover);
+}
+
+main > #section_result > table {
+    width: 500px;
+    text-align: center;
+    border-collapse: collapse;
+}
+main > #section_result > table th {
+    width: 250px;
+    border-bottom: 2px solid var(--black-primary);
+    padding: 8px;
+    font-weight: bolder;
+}
+
+main > #section_result > table td {
+    width: 250px;
+    border-bottom: 1px solid var(--black-primary);
+    padding: 8px;
+}
+
+main > #section_result > table tr:last-of-type td{
+    border-bottom: 2px solid var(--black-primary);   
+}
+
+main{
+    /* 하단 footer가 테이블 가리지 않도록 하단 마진 설정 */
+    margin-bottom: 100px;
+}
+
+
+/* 푸터 */
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: var(--gray-light);
+    padding: 6px;
+    text-align: center;
+}
+
+/****************** 모바일 버전 ******************/
+@media screen and (max-width: 1024px){
+    /* */
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative; /* 모바일 전용 메뉴의 위치를 absolute로 설정하기 위해*/
+    }
+
+    header > .logo {
+        /* 모바일에서 아래 nav가 영역 침범하지 않도록 설정 */
+        padding: 6px 6px;
+    }
+
+    header > .logo > a > img {
+        width: 43px;
+    }
+
+    /* 네비게이션 메뉴 */
+    header nav {
+        /* 기본적으론 숨기고 있다가, 버튼 클릭 > input:checked 되면 노출 처리 */
+        display: none;
+        width: 100%;
+        background-color: var(--black-primary);
+    }
+    header nav > ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    header nav > ul > li {
+        width: 100%;
+        text-align: center;
+        /* li 자체 패딩이 있어서 제거해줌 */
+        padding: 0px;
+    }
+
+    header nav > ul > li > a {
+        display: block;
+        width: 100%;
+        /* a 클릭 영역 확보 용도 */
+        padding: 12px 0px
+    }
+
+    nav > ul > li:active, header nav > ul > li:hover {
+        color: var(--black-primary);
+        background-color: var(--gray-light);
+    }
+    nav > ul > li > a:active, nav > ul > li > a:hover{
+        color: var(--black-primary);
+        background-color: var(--gray-light);
+    }
+
+    /* SNS 링크 */
+    header aside {
+        /* 기본적으로 비노출 처리. 모바일전용버튼(label) 클릭 시, 노출 처리 */
+        display: none;
+        width: 100%;
+        background-color: var(--black-light);
+        border-top: 1px dotted var(--gray-dark);
+    }
+    
+    header > aside > ul{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        padding: 0px
+    }
+    header > aside > ul > li {
+        width: 100%;
+        padding: 0px;
+    }
+    header > aside > ul > li > a {
+        display: block;
+        width: 100%;
+        padding: 8px 24px
+    }
+    header > aside > ul > li > a:active, header > aside > ul > li > a:hover{
+        background-color: var(--black-primary);
+        color: var(--white-dark);
+    }
+
+    /* 모바일 전용 메뉴 */
+    header > label {
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding: 0px 12px
+    }
+    header > label > i.material-icons {
+        font-size: 36px;
+        line-height: 55px;
+    }
+    header > input {
+        display: none;
+    }
+
+    /* 라벨(메뉴아이콘) 클릭 시, input이 체크되도록 html상에 처리해둠 */
+    header > input:checked ~ nav, header > input:checked ~ aside{
+        display: block;
+    }
+    header > input:checked ~ label {
+        color: var(--white-light);
+    }
+}
 

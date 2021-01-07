@@ -1,26 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+
+    <!-- GoogleWebFont -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;600&display=swap" rel="stylesheet">
+
+    <!-- GoogleIcons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Google Analytics -->
+
+    <!-- Google Adsense -->
+    
+    <!-- 기본 스타일 -->
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>curryyou</title>
+    
+    <!-- 적용 스타일 -->
+    {% block style %}
+    {% endblock %}
+    
+    <!-- 기본 스크립트 -->
+    <script src="script.js" defer></script>
+    
+
+    <!-- 적용 스크립트 -->
+
+    <title>도구마스터</title>
+
 </head>
+
 <body>
-    <h1>카레유의 GitHub 페이지입니다.</h1>
-    <div id="wrap">
-        <img src="profile.jpeg" alt="profile">
-        <div id='div_first'>
-            <p>카레유</p>
+    <!-- Header : 상단 메뉴 -->
+    <header>
+        <!-- 모바일 전용 메뉴 -->
+        <input type="checkbox" name="input_mobile" id="input_mobile">
+        <label id="menu_mobile" for="input_mobile" onclick=""><i class="material-icons">menu</i></label>
+
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/"><img src="dogumigak_logo_01.png" alt="로고"></a>
+            <a href="/">도구마스터</a>
         </div>
-        <div id="div_second">
-            <p>GitHub Pages 테스트 중</p>
-        </div>
-        <p><a href="test.html">test.html</a></p>
-        <p><a href="testFolder/testFolder.html">testFolder/testFolder.html</a></p>
-    </div>
+        
+    <!-- Navigator -->
+    <nav>
+        <ul>
+            <li><a href="#">랜덤 나누기</a></li>
+            <li><a href="#">새로운 서비스</a></li>
+            <li><a href="#">생각 중입니다</a></li>
+            <li><a href="#">기대해 주세요</a> </li>
+            <li><a href="#">조만간 나와요</a></li>
+        </ul>
+    </nav>
+    
+    <!-- SNS Link -->
+    <aside>
+        <ul>
+            <li><a href="https://curryyou.tistory.com" target="_blank"><i class="material-icons"> assignment</i> 블로그</a></li>
+            <li><a href="https://smartstore.naver.com/dogumigak/" target="_blank"><i class="material-icons"> shopping_basket</i> 쇼핑몰</a></li>
+        </ul>
+    </aside>
+
+    
+    </header>
+
+    <!-- Main -->
+    <main>
+
+        <!-- --------- section #1: 제목 부분 --------- -->
+        <section id="section_title">
+            <div>
+                <img src="dogumigak_logo_01.png" alt="아이콘">
+            </div>
+            <div>
+                <h3>랜덤 나누기 <a href="#">ⓘ</a></h3>
+            </div>
+        </section>
+        
+        <!-- --------- section #2: 인풋/버튼 부분 --------- -->
+        <section id="section_input">
+            <!-- 총금액/총회차 입력 -->
+            <div id="input_first">
+                <p>1. 총 금액을 원하는 회차로 나누세요.</p>
+                <input type="number" placeholder="총 금액" name="input_total" id="input_total">
+                <input type="number" placeholder="총 회차" name="input_count" id="input_count">
+                <button id="btn_divide">계산하기</button>
+                </div>
+            </div>
+
+            <!-- 광고 영역 -->
+            <div id="input_aside">
+                <a href="https://www.instagram.com/dogumigak/">도구미각 인스타그램</a>
+            </div>
+        </section>
+        
+        <!-- --------- section #3 : 결과 테이블 --------- -->
+        <section id="section_result">
+            <div>
+                <p>
+                    2. 계산결과 <span>(화살표로 금액 격차를 조정하세요)</span>
+                    <a id="btn_diff_plus" href="#"><span class="material-icons">arrow_circle_up</span></a> <span id="span_diff_val">1</span> <a id="btn_diff_minus" href="#"><span class="material-icons">arrow_circle_down</span></a>
+                </p>
+            </div>
+            
+            <table>
+                <tr>
+                    <th>회차</th>
+                    <th>금액</th>
+                </tr>
+            </table>
+        </section>
+        <aside></aside>
+    </main>
+
+    <!-- Aside -->
+    <aside></aside>
+
+<!-- Footer -->
+    <footer>
+        <h4>참고 용도로만 활용하시기 바라며, 정확한 수치 및 정보는 반드시 별도 확인하시기 바랍니다.</h4>
+        <p>(발생하는 어떤 문제에도 책임지지 않습니다.)</p>
+        <p>문의사항은 curryyou.go@gmail.com 으로 보내주세요</p>
+    </footer>
+    
 </body>
+
 </html>
