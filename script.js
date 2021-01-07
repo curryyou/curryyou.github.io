@@ -149,10 +149,10 @@ btn_diff_minus.onclick = function(e){
 // 플러스/마이너스 버튼 활성/비활성화 처리
 function activateArrow(btn, toggle=true){
     if(toggle){ // 활성화
-        btn.style.color = '#0096FF';
+        btn.firstElementChild.style.color = '#0096FF';
         btn.setAttribute('href', "#");
     }else{ // 비활성화
-        btn.style.color = 'gray';
+        btn.firstElementChild.style.color = 'gray';
         btn.removeAttribute('href');
     }
 }
