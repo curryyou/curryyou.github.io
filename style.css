@@ -9,6 +9,9 @@
     --white-light: #fafafa;
     --white-primary: #f5f5f5;
     --white-dark: #eeeeee;
+    --green-button: #2ea44f;
+    --blue-button: #0096FF;
+    --blue-button-hover: #0667d6;
 }
 
 /****************** CSS 초기화 ******************/
